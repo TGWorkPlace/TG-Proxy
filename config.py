@@ -9,7 +9,7 @@ PORT = 8080
 # Generate your own with: python3 -c "import secrets; print(secrets.token_hex(16))"
 # Replace these placeholder secrets before deploying.
 USERS = {
-    "tg": "00000000000000000000000000000000",
+    "tg": "A7k9X2mP8qR4tY1nB6vC3dE5fG0hJ2Lz",
 }
 
 # Which connection modes to allow.
@@ -24,7 +24,7 @@ MODES = {
 
 # Domain the proxy pretends to be when in tls mode. Use a real, popular,
 # already-HTTPS domain (the default is fine for most cases).
-TLS_DOMAIN = "www.google.com"
+TLS_DOMAIN = "www.telegram.org"
 
 # Leave blank unless you've registered a sponsor channel tag via @MTProxybot.
 # A non-empty AD_TAG switches the proxy into "middle proxy" mode.
