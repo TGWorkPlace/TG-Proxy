@@ -1,5 +1,9 @@
 FROM python:3.11-slim
 
+# Force unbuffered stdout/stderr so logs always reach Koyeb's log
+# collector immediately, with no risk of buffering delays or loss.
+ENV PYTHONUNBUFFERED=1
+
 # Tools needed to fetch the upstream proxy source at build time
 RUN apt-get update \
     && apt-get install -y --no-install-recommends git \
@@ -25,4 +29,5 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 EXPOSE 8080
 EXPOSE 8000
 
-CMD ["python3", "main.py"]
+# -u forces unbuffered mode at the interpreter level too, belt-and-braces
+CMD ["python3", "-u", "main.py"]
