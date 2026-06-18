@@ -20,7 +20,9 @@ COPY requirements.txt /app/requirements.txt
 
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Koyeb routes traffic to whatever port you expose; using 8080 as requested
+# Port 8080: the real MTProto proxy (raw TCP, what your Telegram client connects to)
+# Port 8000: minimal HTTP server, only so Koyeb has a route to health-check
 EXPOSE 8080
+EXPOSE 8000
 
 CMD ["python3", "main.py"]
