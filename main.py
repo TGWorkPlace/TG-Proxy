@@ -20,7 +20,7 @@ import runpy
 import traceback
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-HTTP_PORT = int(os.environ.get("HTTP_PORT", "8000"))
+HTTP_PORT = int(os.environ.get("HTTP_PORT", "8080"))
 
 print(f"[boot] python={sys.version.split()[0]} HTTP_PORT={HTTP_PORT} PORT_env={os.environ.get('PORT')}",
       flush=True)
